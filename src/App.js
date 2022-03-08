@@ -6,7 +6,7 @@ import DisplayPosts from './Components/DisplayPosts/DisplayPosts';
 
 function App() {
 
-  const [posts, setPosts] = useState([{firstName: 'Sydney', lastName: 'Wilson', post: 'Hello programming world!'}])
+  const [posts, setPosts] = useState([{name: 'Sydney Wilson', post: 'Hello programming world!'}])
 
   function addNewPost(post){
     let tempPosts = [...posts, post];
@@ -15,6 +15,9 @@ function App() {
 
   return (
     <div >
+      <div>
+        <h3>SocialFeed</h3>
+      </div>
       <div>
         <CreatePostForm addNewPost={addNewPost}/>
       </div>

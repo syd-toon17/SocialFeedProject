@@ -1,3 +1,4 @@
+import Post from "../Post/Post";
 
 const DisplayPosts = (props) => {
     return ( 
@@ -7,12 +8,7 @@ const DisplayPosts = (props) => {
                 <tbody>
                 {props.parentPost.map((post, index) => {
                     return (
-                        <tr key = {index}>
-                            <td>{post.firstName}</td>
-                            <td>{post.lastName}</td>
-                            <td>{post.post}</td>   
-                            {/* thumbs up and down buttons go here */}
-                        </tr>
+                        <Post parentPost={post} key={index} />
                     )
                 })}
                 </tbody>

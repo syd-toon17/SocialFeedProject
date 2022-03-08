@@ -2,15 +2,13 @@ import React, { useState } from 'react';
 
 const CreatePostForm = (props) => {
 
-    const [firstName, setFirstName] = useState('');
-    const [lastName, setLastName] = useState('');
+    const [name, setName] = useState('');
     const [post, setPost] = useState('');
 
     function handleSubmit(formEvent){
-        formEvent.preventDefalt();
+        formEvent.preventDefault();
         let newPost = {
-            firstName: firstName,
-            lastName: lastName,
+            name: name,
             post: post
         };
         console.log(newPost);
@@ -20,9 +18,7 @@ const CreatePostForm = (props) => {
     return ( 
         <form onSubmit={handleSubmit}>
             <label>First Name</label>
-            <input type='text' onChange={(event) => setFirstName(event.target.value)} value={firstName}/>
-            <label>Last Name</label>
-            <input type='text' onChange={(event) => setLastName(event.target.value)} value={lastName}/>
+            <input type='text' onChange={(event) => setName(event.target.value)} value={name}/>
             <label>Post</label>
             <input type='text' onChange={(event) => setPost(event.target.value)} value={post}/>
             <button type='submit'>Make Post</button>
