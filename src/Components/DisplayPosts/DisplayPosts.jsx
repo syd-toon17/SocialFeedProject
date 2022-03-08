@@ -8,7 +8,8 @@ const DisplayPosts = (props) => {
                 {props.parentPost.map((post, index) => {
                     return (
                         <tr key = {index}>
-                            <td>{post.name}</td>
+                            <td>{post.firstName}</td>
+                            <td>{post.lastName}</td>
                             <td>{post.post}</td>   
                             {/* thumbs up and down buttons go here */}
                         </tr>
