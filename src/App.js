@@ -1,15 +1,17 @@
 import React, { useState } from 'react';
+import DisplayPosts from './Components/DisplayPosts/DisplayPosts';
 
 
 
 function App() {
 
-const [posts, setPosts] = useState([[{name: 'Sydney', post: 'Hello programming world!'}]])
+const [post, setPosts] = useState([{name: 'Sydney', post: 'Hello programming world!'}])
 
   return (
     <div >
-      <h3>{posts[0]}</h3>
+      <DisplayPosts parentPost={post} />
     </div>
+
   );
 }
 
