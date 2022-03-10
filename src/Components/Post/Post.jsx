@@ -1,13 +1,24 @@
+import React, { useState } from 'react';
 
-const post = (props) => {
+const Post = (props) => {
+
+    const [typeOfLike, setTypeOfLike]= useState('up');
+    function handleLike(event) {
+        if (typeOfLike === 'down') {
+            setTypeOfLike('up')
+        }
+        else{
+             setTypeOfLike('down')
+        }
+    }
+
     return ( 
     <tr>
         <td>{props.parentPost.name}</td>
         <td>{props.parentPost.post}</td>   
-        <td><button type='react'>Like</button></td>
-        <td><button type='react'>Disike</button></td>
+        <td><button type='react' className={`fa fa-thumbs-${typeOfLike}`} onClick={handleLike}></button></td>
     </tr>
      );
 }
  
-export default post;
+export default Post;

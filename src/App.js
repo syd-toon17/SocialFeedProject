@@ -15,17 +15,17 @@ function App() {
   }
 
   return (
-    <div >
-      <div>
-        <Navbar />
+      <div >
+        <div>
+          <Navbar />
+        </div>
+        <div>
+          <CreatePostForm addNewPost={addNewPost}/>
+        </div>
+        <div className='border-box'>
+          <DisplayPosts parentPost={posts} />
+        </div>
       </div>
-      <div className='border-box'>
-        <CreatePostForm addNewPost={addNewPost}/>
-      </div>
-      <div className='border-box'>
-        <DisplayPosts parentPost={posts} />
-      </div>
-    </div>
 
   );
 }
